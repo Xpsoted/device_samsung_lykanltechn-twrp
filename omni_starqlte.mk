@@ -17,15 +17,17 @@
 # Release name
 PRODUCT_RELEASE_NAME := lykanltechn
 
-# Inherit from common AOSP config
-$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Inherit Telephony packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/samsung/lykanltechn/device.mk)
+# Inherit language packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -34,7 +36,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/lykanltechn/recovery/root,recovery/root)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := twrp_lykanltechn
+PRODUCT_NAME := omni_lykanltechn
 PRODUCT_DEVICE := lykanltechn
 PRODUCT_MODEL := SM-W2019
 PRODUCT_BRAND := samsung

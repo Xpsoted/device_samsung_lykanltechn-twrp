@@ -13,9 +13,9 @@
 /efs		emmc	/dev/block/bootdevice/by-name/efs			flags=backup=1;display="EFS"
 /firmware	emmc	/dev/block/bootdevice/by-name/apnhlos			flags=backup=1;display="Firmware"
 /modem		emmc	/dev/block/bootdevice/by-name/modem			flags=backup=1;display="Modem"
-/dsp		emmc	/dev/block/bootdevice/by-name/dsp			flags=backup=1;display="dsp"
-/misc		emmc	/dev/block/bootdevice/by-name/misc			flags=backup=1;display="misc"
-/persist	ext4	/dev/block/bootdevice/by-name/persist			flags=backup=1;display="persist"
+/dsp		emmc	/dev/block/bootdevice/by-name/dsp
+/misc		emmc	/dev/block/bootdevice/by-name/misc
+/persist	ext4	/dev/block/bootdevice/by-name/persist
 
 # Removable storage
 /external_sd	vfat	/dev/block/mmcblk0p1	/dev/block/mmcblk0		flags=storage;wipeingui;removable

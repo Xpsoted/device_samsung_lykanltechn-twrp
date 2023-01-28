@@ -15,6 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/twrp_lykanltechn.mk
-
-COMMON_LUNCH_CHOICES := twrp_lykanltechn-eng
+	$(LOCAL_DIR)/omni_lykanltechn.mk
